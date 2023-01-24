@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input {
+  margin-bottom: 40px;
+
+  span {
+    font-size: 14px;
+    color: #575757;
+  }
+
+  input {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+}

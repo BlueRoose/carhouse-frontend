@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contact {
+  background-color: #272727;
+
+  .map {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    h2 {
+      font-size: 36px;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .mapbg {
+      position: relative;
+      margin: 0 100px;
+      margin-bottom: 250px;
+    }
+
+    .form {
+      width: 500px;
+      height: 550px;
+      background-color: #ffffff;
+      margin: 0 auto;
+      position: absolute;
+      top: 65%;
+      left: 515px;
+      box-sizing: border-box;
+      padding-top: 50px;
+
+      .namemail {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .other {
+        max-width: 440px;
+        margin: 0 auto;
+
+        .message {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-size: 14px;
+            color: #575757;
+          }
+
+          textarea {
+            max-width: 440px;
+            height: 100px;
+            margin-top: 5px;
+            resize: none;
+            outline: none;
+          }
+        }
+      }
+
+      p {
+        max-width: 440px;
+        height: 45px;
+        margin: 70px auto 0 auto;
+        color: black;
+        background-color: #ffd600;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        padding-top: 9px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.1s linear;
+        margin-bottom: 100px;
+      }
+
+      p:hover {
+        border: 3px solid black;
+      }
+    }
+  }
+}
+
+.white {
+  background-color: #ffffff;
+  padding-top: 100px;
+
+  .dealers {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .text {
+      display: flex;
+      justify-content: space-between;
+      color: black;
+
+      h2 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 18px;
+        max-width: 350px;
+        height: 21px;
+      }
+    }
+
+    .cards {
+      padding-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 100px;
+    }
+  }
+}

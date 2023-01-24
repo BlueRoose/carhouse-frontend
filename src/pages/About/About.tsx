@@ -59,12 +59,12 @@ const About: FC = () => {
       </div>
       <div className={styles.history}>
         <div className={styles.text}>
-        <h4>History</h4>
-        <h2>We provide the best product for you</h2>
-        <p>
-          Every day our managers and consultants work to provide you with the
-          best service and cars.
-        </p>
+          <h4>History</h4>
+          <h2>We provide the best product for you</h2>
+          <p>
+            Every day our managers and consultants work to provide you with the
+            best service and cars.
+          </p>
         </div>
         <img src="res/twocars.webp" alt="history" width={422} height={248} />
       </div>

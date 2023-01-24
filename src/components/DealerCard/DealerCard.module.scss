@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.dealercard {
+  width: 200px;
+  height: 200px;
+  background-color: #ffd600;
+  padding: 20px 20px 0 20px;
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}

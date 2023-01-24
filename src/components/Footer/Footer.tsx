@@ -20,7 +20,6 @@ const Footer: FC = () => {
             <li>About</li>
             <li>Services</li>
             <li>Collections</li>
-            <li>Blog</li>
           </ul>
         </div>
       </div>
