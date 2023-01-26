@@ -29,24 +29,28 @@ const Header: FC = () => {
             About
           </li>
         </Link>
-        <li
-          style={
-            pathname === "Services"
-              ? { color: "#ffffff" }
-              : { color: "#979797" }
-          }
-        >
-          Services
-        </li>
-        <li
-          style={
-            pathname === "Collections"
-              ? { color: "#ffffff" }
-              : { color: "#979797" }
-          }
-        >
-          Collections
-        </li>
+        <Link to="/services" style={{ textDecoration: "none" }}>
+          <li
+            style={
+              pathname === "Services"
+                ? { color: "#ffffff" }
+                : { color: "#979797" }
+            }
+          >
+            Services
+          </li>
+        </Link>
+        <Link to="/collections" style={{ textDecoration: "none" }}>
+          <li
+            style={
+              pathname === "Collections"
+                ? { color: "#ffffff" }
+                : { color: "#979797" }
+            }
+          >
+            Collections
+          </li>
+        </Link>
       </ul>
       <Link to="/contact" style={{ textDecoration: "none" }}>
         <p className={styles.contact}>Contact us</p>

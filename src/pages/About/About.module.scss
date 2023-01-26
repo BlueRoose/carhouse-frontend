@@ -76,37 +76,6 @@
   }
 }
 
-.us {
-  max-width: 1200px;
-  margin: 0 auto;
-  border: 1px solid #595959;
-  border-radius: 15px;
-  padding: 20px 0;
-  margin-bottom: 100px;
-
-  h2 {
-    color: black;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 70px;
-  }
-
-  .cards {
-    max-width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-
-    .card {
-      max-width: 250px;
-
-      img {
-        width: 64px;
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-
 .history {
   max-width: 950px;
   display: flex;

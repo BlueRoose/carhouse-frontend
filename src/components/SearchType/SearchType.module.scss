@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.search {
+  p {
+    color: #000000;
+    padding-left: 4px;
+  }
+
+  select {
+    font-size: 16px;
+    border: none;
+    color: #888888;
+
+    option {
+      font-size: 16px;
+    }
+
+    option:checked {
+      box-shadow: 0 0 10px 100px #fff inset;
+      outline: none;
+    }
+  }
+
+  select:active {
+    color: #000000;
+  }
+}

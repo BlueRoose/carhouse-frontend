@@ -6,7 +6,7 @@
 .question {
   max-width: 100%;
   background-color: #ffd800;
-  height: 300px;
+  height: 280px;
   display: flex;
   justify-content: space-between;
 
@@ -37,6 +37,10 @@
         color: #ffffff;
         cursor: pointer;
         transition: 0.2s linear;
+        text-align: center;
+        padding-top: 13px;
+        border-radius: 5px;
+        box-sizing: border-box;
       }
 
       .bt1:hover {

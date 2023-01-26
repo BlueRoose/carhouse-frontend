@@ -22,7 +22,7 @@ const Slider: FC = () => {
       <SwiperSlide>
         <Slide
           typeOfCar="Sport Sedan"
-          carName="BMW M5 F90"
+          carName="BMW M5 Competition"
           description="BMW's latest driving systems are the brains behind the brawn of the 2023 BMW M5 Sedan. Intelligent technology improves your experience on the track and on the road."
           price={799}
           src="res/bmwM5.png"

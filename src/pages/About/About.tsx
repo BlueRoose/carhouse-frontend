@@ -2,6 +2,7 @@ import { FC } from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Question from "../../components/Question/Question";
+import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import styles from "./About.module.scss";
 
 const About: FC = () => {
@@ -40,23 +41,7 @@ const About: FC = () => {
           </p>
         </div>
       </div>
-      <div className={styles.us}>
-        <h2>Why choose us</h2>
-        <div className={styles.cards}>
-          <div className={styles.card}>
-            <img src="res/money.png" alt="price" />
-            <h3>The best price that you really expect</h3>
-          </div>
-          <div className={styles.card}>
-            <img src="res/support.png" alt="support" />
-            <h3>Support ready 24/7 to serve you</h3>
-          </div>
-          <div className={styles.card}>
-            <img src="res/star.png" alt="brand" />
-            <h3>Top brand in the world</h3>
-          </div>
-        </div>
-      </div>
+      <WhyChooseUs />
       <div className={styles.history}>
         <div className={styles.text}>
           <h4>History</h4>
