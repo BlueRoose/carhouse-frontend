@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.carCard {
+  max-width: 392px;
+  position: relative;
+  -webkit-box-shadow: 4px 4px 20px 0px rgba(136, 136, 136, 0.8);
+  -moz-box-shadow: 4px 4px 20px 0px rgba(136, 136, 136, 0.8);
+  box-shadow: 4px 4px 20px 0px rgba(136, 136, 136, 0.8);
+  border-radius: 15px;
+  margin-bottom: 40px;
+
+  img {
+    max-width: 392px;
+    height: 244px;
+    background-color: #c4c4c4;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .price {
+    position: absolute;
+    width: 95px;
+    height: 40px;
+    font-weight: bold;
+    padding: 8px 0 0 8px;
+    box-sizing: border-box;
+    background-color: #ffd600;
+    right: 15px;
+    top: 225px;
+    cursor: pointer;
+    transition: 0.2s linear;
+    border-radius: 5px;
+  }
+
+  .price:hover {
+    border-radius: 15px;
+  }
+
+  .description {
+    padding-top: 20px;
+
+    h2 {
+      max-width: 270px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+  }
+}

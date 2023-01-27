@@ -30,6 +30,11 @@
       font-size: 18px;
       color: #979797;
       cursor: pointer;
+      transition: 0.2s linear;
+    }
+
+    li:hover {
+      color: #ffffff;
     }
   }
 

@@ -5,13 +5,13 @@ import Question from "../../components/Question/Question";
 import styles from "./Services.module.scss";
 
 const Services: FC = () => {
-    return (
-        <div className={styles.services}>
-            <Header />
-            <Question />
-            <Footer />
-        </div>
-    );
-}
+  return (
+    <div className={styles.services}>
+      <Header />
+      <Question />
+      <Footer />
+    </div>
+  );
+};
 
 export default Services;

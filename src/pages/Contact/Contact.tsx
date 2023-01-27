@@ -12,10 +12,8 @@ const Contact: FC = () => {
       <div className={styles.map}>
         <h2>Contact us</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          quae iure quia hic architecto asperiores ullam molestiae obcaecati
-          culpa quibusdam perspiciatis doloremque illo soluta dolor dolorum
-          corporis, mollitia rerum iusto.
+          Our experts are always ready to process your orders, listen to your
+          feedback or provide assistance.
         </p>
         <div className={styles.mapbg}>
           <img

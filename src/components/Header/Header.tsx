@@ -32,7 +32,7 @@ const Header: FC = () => {
         <Link to="/services" style={{ textDecoration: "none" }}>
           <li
             style={
-              pathname === "Services"
+              pathname === "/services"
                 ? { color: "#ffffff" }
                 : { color: "#979797" }
             }
@@ -43,7 +43,7 @@ const Header: FC = () => {
         <Link to="/collections" style={{ textDecoration: "none" }}>
           <li
             style={
-              pathname === "Collections"
+              pathname === "/collections"
                 ? { color: "#ffffff" }
                 : { color: "#979797" }
             }
