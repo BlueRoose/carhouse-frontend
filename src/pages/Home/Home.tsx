@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Slider from "../../components/Slider/Slider";
@@ -6,6 +6,11 @@ import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import styles from "./Home.module.scss";
 
 const Home: FC = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.home}>
       <Header />

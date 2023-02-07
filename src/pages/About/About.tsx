@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Question from "../../components/Question/Question";
@@ -6,6 +6,10 @@ import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import styles from "./About.module.scss";
 
 const About: FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.about}>
       <Header />

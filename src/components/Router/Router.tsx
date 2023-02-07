@@ -7,7 +7,11 @@ import Contact from "../../pages/Contact/Contact";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
 
-const Router: FC = () => {
+interface Props {
+  handleChangePage: (page: number) => void;
+}
+
+const Router: FC<Props> = ({ handleChangePage }) => {
   return (
     <BrowserRouter>
       <Routes>
@@ -15,7 +19,7 @@ const Router: FC = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/collections" element={<Collections />} />
+        <Route path="/collections" element={<Collections handleChangePage={handleChangePage} />} />
       </Routes>
     </BrowserRouter>
   );

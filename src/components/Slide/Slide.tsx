@@ -5,7 +5,7 @@ interface SlideProps {
   typeOfCar: string;
   carName: string;
   description: string;
-  price: number;
+  price: string;
   src: string;
   width: number;
 }
@@ -28,7 +28,7 @@ const Slide: FC<SlideProps> = ({
         </div>
         <div className={styles.price}>
           <p>Starting from</p>
-          <h4>$ {price} / month</h4>
+          <h4>$ {price}</h4>
         </div>
       </div>
       <img src={src} alt="car" width={width} />
