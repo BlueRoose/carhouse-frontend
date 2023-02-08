@@ -17,11 +17,22 @@ export type Cars = {
 
 export type Props = {
   children: JSX.Element;
-  page: number;
 }
 
 export interface CarsContextType {
   count: number;
   cars: Cars[];
+  fullCars: Cars[];
   isCarsLoading: boolean;
+  setPage: (page: number) => void;
+  setSortType: (type: string) => void;
+  setBrand: (str: string) => void;
+  setModel: (str: string) => void;
+  setType: (str: string) => void;
+  setYear: (num: string) => void;
+  handleReset: () => void;
+  brand: string;
+  model: string;
+  type: string;
+  year: string;
 }

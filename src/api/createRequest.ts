@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
 type RequestType = {
   method: string;
   url: string;
-  data?: object;
+  data?: any;
 }
 
 export const request = async ({ method, url, data }: RequestType) => {

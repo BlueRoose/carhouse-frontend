@@ -52,7 +52,7 @@
         width: 100px;
         height: 50px;
         background-color: #ffd600;
-        padding: 12px 30px 15px 30px;
+        padding: 12px 30px 15px 25px;
         margin-top: 10px;
         margin-right: 10px;
         box-sizing: border-box;
@@ -85,11 +85,11 @@
       }
 
       .cards {
-        max-width: 80vw;
+        max-width: 90vw;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
       }
 
       .root {

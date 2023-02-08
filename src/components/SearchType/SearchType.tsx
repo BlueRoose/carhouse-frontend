@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Brands } from "../../providers/brands/types";
 import styles from "./SearchType.module.scss";
 
-type Object = {
+export type Object = {
   name: string,
 }
 
@@ -13,6 +13,10 @@ interface SearchTypeProps {
 }
 
 const SearchType: FC<SearchTypeProps> = ({ name, things, onChange }) => {
+  const names: string[] = [];
+  things.map(thing => names.push(thing.name));
+  const newNames = new Set(names);
+
   return (
     <div className={styles.search}>
       <p>{name}</p>
@@ -20,8 +24,8 @@ const SearchType: FC<SearchTypeProps> = ({ name, things, onChange }) => {
         <option disabled>
           Choose
         </option>
-        {things.map((thing, index) => {
-          return <option key={index}>{thing.name}</option>;
+        {Array.from(newNames).map((thing, index) => {
+          return <option key={index}>{thing}</option>;
         })}
       </select>
     </div>

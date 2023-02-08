@@ -5,21 +5,15 @@ import { CarsProvider } from "./providers/cars/CarsProvider";
 import { TypesProvider } from "./providers/types/TypesProvider";
 
 const App: FC = () => {
-  const [page, setPage] = useState<number>(0);
-
-  const handleChangePage = (page: number) => {
-    setPage(page);
-  }
-
   return (
     <div className="App">
-      <CarsProvider page={page}>
-        <BrandsProvider>
+      <BrandsProvider>
+        <CarsProvider>
           <TypesProvider>
-            <Router handleChangePage={handleChangePage} />
+            <Router />
           </TypesProvider>
-        </BrandsProvider>
-      </CarsProvider>
+        </CarsProvider>
+      </BrandsProvider>
     </div>
   );
 };
