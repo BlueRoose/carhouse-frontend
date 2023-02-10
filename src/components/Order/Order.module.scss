@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.order {
+  max-width: 600px;
+  height: 430px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 15px;
+  z-index: index;
+  position: absolute;
+  left: 35%;
+  top: 8%;
+
+  .span {
+    text-align: right;
+    font-size: 24px;
+    margin: 5px 10px 0 0;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 26px;
+    color: #000000;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .namemail {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .other {
+  }
+
+  p {
+    width: 440px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #ffd600;
+    border-radius: 5px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: 0.2s linear;
+  }
+
+  p:hover {
+    border-radius: 15px;
+  }
+}

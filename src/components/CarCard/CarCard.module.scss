@@ -5,6 +5,7 @@
 
 .carCard {
   max-width: 392px;
+  height: 479px;
   position: relative;
   -webkit-box-shadow: 4px 4px 20px 0px rgba(136, 136, 136, 0.8);
   -moz-box-shadow: 4px 4px 20px 0px rgba(136, 136, 136, 0.8);
@@ -45,10 +46,11 @@
       max-width: 270px;
       margin-bottom: 20px;
       margin-left: 20px;
-      cursor: pointer;
     }
 
     .options {
+      position: absolute;
+      top: 400px;
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 20px;

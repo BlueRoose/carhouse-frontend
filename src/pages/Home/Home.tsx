@@ -33,9 +33,10 @@ const Home: FC = () => {
           <li>Mercedes</li>
           <li>Porsche</li>
           <li>Lamborghini</li>
-          <li>Ford</li>
-          <li>Dodge</li>
-          <li>Aston Martin</li>
+          <li>Bugatti</li>
+          <li>Land Rover</li>
+          <li>Ferrari</li>
+          <li>Rolls Royce</li>
         </ul>
       </div>
       <WhyChooseUs />

@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  max-width: 60vw;
+  margin: 0 auto;
+  display: flex;
+
+  p {
+    width: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .left {
+    text-align: left;
+    background-color: #272727;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s linear;
+  }
+
+  .right {
+    text-align: right;
+    background-color: #ffd600;
+    transition: 0.3s linear
+  }
+
+  .left:hover {
+    background-color: #ffd600;
+    color: #000000;
+  }
+
+  .left:hover + .right {
+    background-color: #272727;
+    color: #ffffff;
+  }
+}

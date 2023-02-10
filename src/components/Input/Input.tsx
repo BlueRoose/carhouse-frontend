@@ -6,7 +6,7 @@ interface InputProps {
   inputWidth: number;
   inputHeight: number;
   onChange: (name: string, value: string) => void;
-  value: string;
+  value?: string;
 }
 
 const Input: FC<InputProps> = ({ label, inputWidth, inputHeight, onChange, value }) => {

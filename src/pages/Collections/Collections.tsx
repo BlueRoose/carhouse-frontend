@@ -74,7 +74,7 @@ const Collections: FC = () => {
   const handleClickReset = () => {
     handleReset();
     window.location.reload();
-  }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -111,58 +111,70 @@ const Collections: FC = () => {
               onChange={setYear}
             />
           </div>
-          <p className={styles.find} onClick={handleClickReset}>RESET</p>
+          <p className={styles.find} onClick={handleClickReset}>
+            RESET
+          </p>
         </div>
         <div className={styles.main}>
-          {isCarsLoading ? (
-            <div className={styles.spinner}>
-              <BeatLoader color="#ffd600" size={50} margin="20px" />
-            </div>
-          ) : (
+          {fullCars.length ? (
             <>
-              <div className={styles.sort}>
-                <h3>Showing {cars.length} from {count} results</h3>
-                <SearchType
-                  name="Sort by"
-                  things={[
-                    { name: "Name" },
-                    { name: "Popularity" },
-                    { name: "Low Price" },
-                    { name: "High Price" },
-                  ]}
-                  onChange={setSortType}
-                />
-              </div>
-              <div className={styles.cards}>
-                {carsList.map((car, index) => {
-                  return (
-                    <CarCard
-                      key={index}
-                      brand={
-                        brands.find((brand) => brand.id === car.brandId)?.name
-                      }
-                      name={car.name}
-                      img={car.img}
-                      price={car.price}
-                      transmition={car.transmition}
-                      passenger={car.passenger}
-                      topSpeed={car.topSpeed}
-                      horsePower={car.horsePower}
-                      time={car.time}
+              {isCarsLoading ? (
+                <div className={styles.spinner}>
+                  <BeatLoader color="#ffd600" size={50} margin="20px" />
+                </div>
+              ) : (
+                <>
+                  <div className={styles.sort}>
+                    <h3>
+                      Showing {cars.length} from {count} results
+                    </h3>
+                    <SearchType
+                      name="Sort by"
+                      things={[
+                        { name: "Name" },
+                        { name: "Popularity" },
+                        { name: "Low Price" },
+                        { name: "High Price" },
+                      ]}
+                      onChange={setSortType}
                     />
-                  );
-                })}
-              </div>
-              <ReactPaginate
-                className={styles.root}
-                breakLabel="..."
-                nextLabel=">"
-                onPageChange={(event: Event) => setPage(event.selected)}
-                pageRangeDisplayed={9}
-                pageCount={Math.ceil(count / 9)}
-                previousLabel="<"
-              />
+                  </div>
+                  <div className={styles.cards}>
+                    {carsList.map((car, index) => {
+                      return (
+                        <CarCard
+                          key={index}
+                          brand={
+                            brands.find((brand) => brand.id === car.brandId)
+                              ?.name
+                          }
+                          id={car.id}
+                          name={car.name}
+                          img={car.img}
+                          price={car.price}
+                          transmition={car.transmition}
+                          passenger={car.passenger}
+                          topSpeed={car.topSpeed}
+                          horsePower={car.horsePower}
+                          time={car.time}
+                        />
+                      );
+                    })}
+                  </div>
+                  <ReactPaginate
+                    className={styles.root}
+                    breakLabel="..."
+                    nextLabel=">"
+                    onPageChange={(event: Event) => setPage(event.selected)}
+                    pageRangeDisplayed={9}
+                    pageCount={Math.ceil(count / 9)}
+                    previousLabel="<"
+                  />
+                </>
+              )}
             </>
+          ) : (
+            <h2 style={{textAlign: "center", marginTop: "130px"}}>Sorry, we don't have any positions available at the moment :{"("}</h2>
           )}
         </div>
       </div>

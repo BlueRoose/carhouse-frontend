@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import About from "../../pages/About/About";
+import CarPage from "../../pages/CarPage/CarPage";
 import Collections from "../../pages/Collections/Collections";
 import Contact from "../../pages/Contact/Contact";
 import Home from "../../pages/Home/Home";
@@ -16,6 +17,7 @@ const Router: FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/collections/car/:id" element={<CarPage />} />
       </Routes>
     </BrowserRouter>
   );
