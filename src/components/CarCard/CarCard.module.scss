@@ -13,11 +13,15 @@
   border-radius: 15px;
   margin-bottom: 40px;
 
-  img {
+  .img {
     max-width: 392px;
     height: 244px;
-    background-color: #c4c4c4;
     border-radius: 15px 15px 0 0;
+  }
+
+  .ordered {
+    position: absolute;
+    right: 0px;
   }
 
   .price {

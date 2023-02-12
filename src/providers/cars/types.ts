@@ -24,6 +24,7 @@ export interface CarsContextType {
   cars: Cars[];
   fullCars: Cars[];
   isCarsLoading: boolean;
+  page: number;
   setPage: (page: number) => void;
   setSortType: (type: string) => void;
   setBrand: (str: string) => void;

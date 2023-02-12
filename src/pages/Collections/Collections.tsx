@@ -22,6 +22,7 @@ const Collections: FC = () => {
     fullCars,
     count,
     isCarsLoading,
+    page,
     setPage,
     setSortType,
     setBrand,
@@ -78,6 +79,9 @@ const Collections: FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [page]);
+
+  useEffect(() => {
     setCarsList(cars);
   }, [cars]);
 

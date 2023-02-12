@@ -48,11 +48,11 @@ const Contact: FC = () => {
         </div>
         <div className={styles.form}>
           <div className={styles.namemail}>
-            <Input label="Name" value={formData.name} inputWidth={205} inputHeight={30} onChange={handleChangeForm} />
-            <Input label="Email" value={formData.email} inputWidth={205} inputHeight={30} onChange={handleChangeForm} />
+            <Input type="text" label="Name" value={formData.name} inputWidth={205} inputHeight={30} onChange={handleChangeForm} />
+            <Input type="text" label="Email" value={formData.email} inputWidth={205} inputHeight={30} onChange={handleChangeForm} />
           </div>
           <div className={styles.other}>
-            <Input label="Subject" value={formData.subject} inputWidth={440} inputHeight={30} onChange={handleChangeForm} />
+            <Input type="text" label="Subject" value={formData.subject} inputWidth={440} inputHeight={30} onChange={handleChangeForm} />
             <div className={styles.message}>
               <span>Message</span>
               <textarea name="Message" value={formData.text} onChange={(event) => handleChangeForm("text", event.target.value)}></textarea>

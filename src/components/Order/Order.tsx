@@ -39,12 +39,14 @@ const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
         <h5>{brand + " " + name}</h5>
         <div className={styles.namemail}>
           <Input
+          type="text"
             label="Name"
             inputWidth={205}
             inputHeight={30}
             onChange={handleChangeForm}
           />
           <Input
+          type="text"
             label="Email"
             inputWidth={205}
             inputHeight={30}
@@ -53,6 +55,7 @@ const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
         </div>
         <div className={styles.other}>
           <Input
+          type="text"
             label="Phone"
             inputWidth={440}
             inputHeight={30}

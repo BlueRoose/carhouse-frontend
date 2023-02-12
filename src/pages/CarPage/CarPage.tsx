@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { addRequest } from "../../api/buyRequests";
+import { addRequest, getRequests } from "../../api/buyRequests";
 import CarCard from "../../components/CarCard/CarCard";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -14,6 +14,14 @@ import { useTypes } from "../../hooks/useTypes";
 import { Cars } from "../../providers/cars/types";
 import styles from "./CarPage.module.scss";
 
+interface Request {
+  id: number;
+  carId: number;
+  name: string;
+  email: string;
+  phone: string;
+}
+
 const CarPage: FC = () => {
   const { id } = useParams();
   const { fullCars } = useCars();
@@ -21,17 +29,22 @@ const CarPage: FC = () => {
   const { brands } = useBrands();
   const myCar = fullCars.find((car) => car.id === Number(id));
   const [isShowed, setIsShowed] = useState<boolean>(false);
+  const [requests, setRequests] = useState<Request[]>([]);
+
+  useEffect(() => {
+    getRequests().then((requests) => setRequests(requests));
+  }, [id]);
+
   const other: Array<Cars> = [];
   for (let i = 0; i < 100; i++) {
     let rand =
       fullCars[0]?.id +
       Math.random() * (fullCars[fullCars.length - 1]?.id + 1 - fullCars[0]?.id);
-    if (fullCars[Math.floor(rand)]?.id !== myCar?.id && other.length < 3 && fullCars[Math.floor(rand)] && !other.includes(fullCars[Math.floor(rand)])) {
+    if (fullCars[Math.floor(rand)]?.id !== myCar?.id && other.length < 3 && fullCars[Math.floor(rand)] && !other.includes(fullCars[Math.floor(rand)]) && !requests?.some(request => request.carId === fullCars[Math.floor(rand)].id)) {
       other.push(fullCars[Math.floor(rand)]);
     } else {
       continue;
     }
-    console.log(other);
   }
 
   const sendRequest = (data: FormData) => {
