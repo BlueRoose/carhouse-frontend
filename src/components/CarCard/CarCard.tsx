@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getRequests } from "../../api/buyRequests";
+import { getBuyRequests } from "../../api/buyRequests";
 import Option from "../Option/Option";
 import styles from "./CarCard.module.scss";
 
@@ -40,7 +40,7 @@ const CarCard: FC<CarCardProps> = ({
   const [isOrdered, setIsOrdered] = useState<boolean>(false);
 
   useEffect(() => {
-    getRequests().then((requests) => {
+    getBuyRequests().then((requests) => {
       requests.map((order: Request) => {
         if (order?.carId === id) {
           setIsOrdered(true);

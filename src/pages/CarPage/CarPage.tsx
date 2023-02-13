@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { addRequest, getRequests } from "../../api/buyRequests";
+import { addRequest, getBuyRequests } from "../../api/buyRequests";
 import CarCard from "../../components/CarCard/CarCard";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -32,7 +32,7 @@ const CarPage: FC = () => {
   const [requests, setRequests] = useState<Request[]>([]);
 
   useEffect(() => {
-    getRequests().then((requests) => setRequests(requests));
+    getBuyRequests().then((requests) => setRequests(requests));
   }, [id]);
 
   const other: Array<Cars> = [];

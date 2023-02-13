@@ -15,7 +15,7 @@ export const addRequest = async (obj: FormData) => {
   });
 };
 
-export const getRequests = async () => {
+export const getBuyRequests = async () => {
   const requests = await request({
     url: "/buyrequest",
     method: "GET",
