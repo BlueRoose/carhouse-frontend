@@ -15,7 +15,12 @@ export const request = async ({ method, url, data }: RequestType) => {
     method,
     data,
     url,
+    headers: {
+      "Content-type": "multipart/form-data",
+    },
   };
+
+
 
   try {
     const result = await axiosInstance(options);

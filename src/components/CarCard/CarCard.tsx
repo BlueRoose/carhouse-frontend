@@ -41,13 +41,23 @@ const CarCard: FC<CarCardProps> = ({
 
   useEffect(() => {
     getBuyRequests().then((requests) => {
-      requests.map((order: Request) => {
-        if (order?.carId === id) {
+      for (let i = 0; i < requests.length; i++) {
+        console.log(name, requests[i].carId === id);
+        if (requests[i].carId === id) {
           setIsOrdered(true);
+          break;
         }
-      });
+        else {
+          setIsOrdered(false);
+        }
+      }
+      // requests.forEach((order: Request) => {
+      //   console.log(name, order.carId === id)
+      //   if (order.carId === id) {
+      //     setIsOrdered(true);
+      //   }
     });
-  }, [id]);
+    }, [name, id]);
 
   return (
     <div className={styles.carCard}>

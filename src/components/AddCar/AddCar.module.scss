@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.add {
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: #ffd600;
+    padding: 10px 5px 5px 5px;
+    box-sizing: border-box;
+
+    .inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        input {
+            text-align: center;
+        }
+
+        .file {
+            margin-bottom: 20px;
+        }
+    }
+
+    .click {
+        width: 500px;
+        height: 30px;
+        margin: 0 auto;
+        padding: 2px 10px 0 10px;
+        background-color: #272727;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.2s linear;
+    }
+
+    .click:hover {
+        border-radius: 15px;
+    }
+}

@@ -8,6 +8,7 @@ import Request from "../../components/Request/Request";
 import BuyRequest from "../../components/BuyRequest/BuyRequest";
 import styles from "./CheckUser.module.scss";
 import AddInfo from "../../components/AddInfo/AddInfo";
+import AddCar from "../../components/AddCar/AddCar";
 import { addBrand } from "../../api/brands";
 import { addType } from "../../api/types";
 
@@ -26,7 +27,7 @@ export interface BuyRequest {
 }
 
 const CheckUser: FC = () => {
-  const [isAuth, setIsAuth] = useState<boolean>(true);
+  const [isAuth, setIsAuth] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
   const [action, setAction] = useState<string>("");
   const [requests, setRequests] = useState<Req[]>([]);
@@ -83,7 +84,7 @@ const CheckUser: FC = () => {
             ) : action === "type" ? (
               <AddInfo onSubmit={addType}/>
             ) : action === "car" ? (
-              <></>
+              <AddCar />
             ) : (
               <></>
             )}

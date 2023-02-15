@@ -81,14 +81,14 @@
         font-weight: bold;
         padding-top: 9px;
         box-sizing: border-box;
-        border-radius: 10px;
+        border-radius: 5px;
         cursor: pointer;
         transition: 0.1s linear;
         margin-bottom: 100px;
       }
 
       p:hover {
-        border: 3px solid black;
+        border-radius: 15px;
       }
     }
   }
