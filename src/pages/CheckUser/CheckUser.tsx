@@ -32,13 +32,20 @@ const CheckUser: FC = () => {
   const [action, setAction] = useState<string>("");
   const [requests, setRequests] = useState<Req[]>([]);
   const [buyRequests, setBuyRequests] = useState<BuyRequest[]>([]);
+  const [error, setError] = useState<boolean>(false);
 
   const handleChangePassword = (name: string, password: string) => {
     setPassword(password);
   };
 
-  const handleLogin = () => {
-    checkUser(password).then(() => setIsAuth(true));
+  const handleLogin = async () => {
+    try {
+      await checkUser(password);
+      setIsAuth(true);
+    } catch (error) {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
   };
 
   useEffect(() => {
@@ -52,13 +59,16 @@ const CheckUser: FC = () => {
         <div className={styles.auth}>
           <Logo />
           <h2>Admin panel</h2>
-          <Input
-            type="password"
-            label="Enter your password:"
-            inputWidth={300}
-            inputHeight={25}
-            onChange={handleChangePassword}
-          />
+          <div className={styles.inp}>
+            <Input
+              type="password"
+              label="Enter your password:"
+              inputWidth={300}
+              inputHeight={25}
+              onChange={handleChangePassword}
+            />
+          </div>
+          <h5>{error && "Incorrect password"}</h5>
           <p className={styles.button} onClick={handleLogin}>
             Login
           </p>
@@ -78,11 +88,11 @@ const CheckUser: FC = () => {
             {action === "user" ? (
               <Request items={requests} />
             ) : action === "buy" ? (
-              <BuyRequest items={buyRequests}/>
+              <BuyRequest items={buyRequests} />
             ) : action === "brand" ? (
-              <AddInfo onSubmit={addBrand}/>
+              <AddInfo onSubmit={addBrand} />
             ) : action === "type" ? (
-              <AddInfo onSubmit={addType}/>
+              <AddInfo onSubmit={addType} />
             ) : action === "car" ? (
               <AddCar />
             ) : (

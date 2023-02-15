@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { addRequest } from "../../api/buyRequests";
 import Input from "../Input/Input";
 import styles from "./Order.module.scss";
 
@@ -14,7 +15,7 @@ interface Props {
   name: string | undefined;
   id: number | undefined;
   closeWindow: () => void;
-  sendRequest: (data: FormData) => void;
+  sendRequest: () => void;
 }
 
 const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
@@ -24,9 +25,28 @@ const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
     phone: 0,
     carId: id,
   });
+  const [error, setError] = useState<boolean>(false);
 
   const handleChangeForm = (name: string, value: string) => {
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleClickSend = async () => {
+    try {
+      if (
+        formData.name === "" ||
+        formData.email === "" ||
+        formData.phone === 0
+      ) {
+        throw Error;
+      } else {
+        await addRequest(formData);
+        sendRequest();
+      }
+    } catch (error) {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
   };
 
   return (
@@ -36,17 +56,19 @@ const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
       </div>
       <div className={styles.info}>
         <h3>Selected car:</h3>
-        <h5>{brand + " " + name}</h5>
+        <h4>{brand + " " + name}</h4>
         <div className={styles.namemail}>
           <Input
-          type="text"
+            type="text"
+            pattern="^[a-zA-Z]+$"
             label="Name"
             inputWidth={205}
             inputHeight={30}
             onChange={handleChangeForm}
           />
           <Input
-          type="text"
+            type="text"
+            pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
             label="Email"
             inputWidth={205}
             inputHeight={30}
@@ -55,14 +77,16 @@ const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
         </div>
         <div className={styles.other}>
           <Input
-          type="text"
+            type="text"
             label="Phone"
+            pattern="[0-9]{5,10}"
             inputWidth={440}
             inputHeight={30}
             onChange={handleChangeForm}
           />
         </div>
-        <p onClick={() => sendRequest(formData)}>Send my order</p>
+        <h5>{error && "Something went wrong"}</h5>
+        <p onClick={handleClickSend}>Send my order</p>
       </div>
     </div>
   );

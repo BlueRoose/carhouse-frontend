@@ -3,7 +3,7 @@ import { request } from "./createRequest";
 
 export const addRequest = async (obj: FormData) => {
   const { name, email, phone, carId } = obj;
-  await request({
+  const req = await request({
     url: "/buyrequest",
     method: "POST",
     data: {
@@ -13,6 +13,7 @@ export const addRequest = async (obj: FormData) => {
       carId,
     },
   });
+  return req;
 };
 
 export const getBuyRequests = async () => {

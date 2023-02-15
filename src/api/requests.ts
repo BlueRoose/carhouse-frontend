@@ -3,7 +3,7 @@ import { request } from "./createRequest";
 
 export const addRequest = async (obj: FormData) => {
   const { name, email, subject, text } = obj;
-  await request({
+  const req = await request({
     url: "/request",
     method: "POST",
     data: {
@@ -13,6 +13,7 @@ export const addRequest = async (obj: FormData) => {
       text,
     },
   });
+  return req;
 };
 
 export const getRequests = async () => {

@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { addRequest, getBuyRequests } from "../../api/buyRequests";
+import { getBuyRequests } from "../../api/buyRequests";
 import CarCard from "../../components/CarCard/CarCard";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -47,8 +47,7 @@ const CarPage: FC = () => {
     }
   }
 
-  const sendRequest = (data: FormData) => {
-    addRequest(data);
+  const sendRequest = () => {
     setIsShowed(false);
     enablePageScroll();
   };

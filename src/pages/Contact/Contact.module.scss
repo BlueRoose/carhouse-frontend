@@ -33,11 +33,11 @@
 
     .form {
       width: 500px;
-      height: 550px;
+      height: 570px;
       background-color: #ffffff;
       margin: 0 auto;
       position: absolute;
-      top: 65%;
+      top: 60%;
       left: 515px;
       box-sizing: border-box;
       padding-top: 50px;
@@ -66,8 +66,16 @@
             margin-top: 5px;
             resize: none;
             outline: none;
+            margin-bottom: 20px;
           }
         }
+      }
+
+      .error {
+        height: 20px;
+        margin: 0 auto;
+        text-align: center;
+        color: red;
       }
 
       p {
