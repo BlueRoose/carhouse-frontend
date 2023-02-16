@@ -3,8 +3,8 @@ import { Brands } from "../../providers/brands/types";
 import styles from "./SearchType.module.scss";
 
 export type Object = {
-  name: string,
-}
+  name: string;
+};
 
 interface SearchTypeProps {
   name: string;
@@ -14,16 +14,17 @@ interface SearchTypeProps {
 
 const SearchType: FC<SearchTypeProps> = ({ name, things, onChange }) => {
   const names: string[] = [];
-  things.map(thing => names.push(thing.name));
+  things.map((thing) => names.push(thing.name));
   const newNames = new Set(names);
 
   return (
     <div className={styles.search}>
       <p>{name}</p>
-      <select onChange={(event) => onChange(event.target.value)} defaultValue={"Choose"}>
-        <option disabled>
-          Choose
-        </option>
+      <select
+        onChange={(event) => onChange(event.target.value)}
+        defaultValue={"Choose"}
+      >
+        <option disabled>Choose</option>
         {Array.from(newNames).map((thing, index) => {
           return <option key={index}>{thing}</option>;
         })}

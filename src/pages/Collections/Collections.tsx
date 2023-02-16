@@ -11,6 +11,7 @@ import { useCars } from "../../hooks/useCars";
 import { useTypes } from "../../hooks/useTypes";
 import { Cars } from "../../providers/cars/types";
 import styles from "./Collections.module.scss";
+import { Link } from "react-router-dom";
 
 interface Event {
   selected: number;
@@ -118,6 +119,15 @@ const Collections: FC = () => {
           <p className={styles.find} onClick={handleClickReset}>
             RESET
           </p>
+          <Link to="/compare">
+            <img
+              className={styles.compare}
+              width={64}
+              height={64}
+              src="res/ves.avif"
+              alt="ves"
+            />
+          </Link>
         </div>
         <div className={styles.main}>
           {fullCars.length ? (
@@ -178,7 +188,9 @@ const Collections: FC = () => {
               )}
             </>
           ) : (
-            <h2 style={{textAlign: "center", marginTop: "130px"}}>Sorry, we don't have any positions available at the moment :{"("}</h2>
+            <h2 style={{ textAlign: "center", marginTop: "130px" }}>
+              Sorry, we don't have any positions available at the moment :{"("}
+            </h2>
           )}
         </div>
       </div>

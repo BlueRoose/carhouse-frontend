@@ -6,7 +6,6 @@ import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import styles from "./Home.module.scss";
 
 const Home: FC = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

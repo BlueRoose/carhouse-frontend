@@ -38,12 +38,12 @@ export const CarsProvider: FC<Props> = ({ children }) => {
     setModel("");
     setType("");
     setYear("");
-  }
+  };
 
   useEffect(() => {
     getCars(brand, type, model, year, page, sortType).then((cars) => {
       setCars(cars.rows);
-      setFullCars(cars.fullCars)
+      setFullCars(cars.fullCars);
       setCount(cars.count);
       setIsCarsLoading(false);
     });
@@ -65,12 +65,8 @@ export const CarsProvider: FC<Props> = ({ children }) => {
     brand,
     model,
     type,
-    year
+    year,
   };
 
-  return (
-    <CarsContext.Provider value={value}>
-      {children}
-    </CarsContext.Provider>
-  );
+  return <CarsContext.Provider value={value}>{children}</CarsContext.Provider>;
 };

@@ -10,6 +10,7 @@ import Order, { FormData } from "../../components/Order/Order";
 import Question from "../../components/Question/Question";
 import { useBrands } from "../../hooks/useBrands";
 import { useCars } from "../../hooks/useCars";
+import { useCompare } from "../../hooks/useCompare";
 import { useTypes } from "../../hooks/useTypes";
 import { Cars } from "../../providers/cars/types";
 import styles from "./CarPage.module.scss";
@@ -27,7 +28,9 @@ const CarPage: FC = () => {
   const { fullCars } = useCars();
   const { types } = useTypes();
   const { brands } = useBrands();
+  const { onAddCar, isCarAdded } = useCompare();
   const myCar = fullCars.find((car) => car.id === Number(id));
+  const isAdded = isCarAdded(Number(id));
   const [isShowed, setIsShowed] = useState<boolean>(false);
   const [requests, setRequests] = useState<Request[]>([]);
 
@@ -40,7 +43,15 @@ const CarPage: FC = () => {
     let rand =
       fullCars[0]?.id +
       Math.random() * (fullCars[fullCars.length - 1]?.id + 1 - fullCars[0]?.id);
-    if (fullCars[Math.floor(rand)]?.id !== myCar?.id && other.length < 3 && fullCars[Math.floor(rand)] && !other.includes(fullCars[Math.floor(rand)]) && !requests?.some(request => request.carId === fullCars[Math.floor(rand)].id)) {
+    if (
+      fullCars[Math.floor(rand)]?.id !== myCar?.id &&
+      other.length < 3 &&
+      fullCars[Math.floor(rand)] &&
+      !other.includes(fullCars[Math.floor(rand)]) &&
+      !requests?.some(
+        (request) => request.carId === fullCars[Math.floor(rand)].id
+      )
+    ) {
       other.push(fullCars[Math.floor(rand)]);
     } else {
       continue;
@@ -104,6 +115,12 @@ const CarPage: FC = () => {
                 style={{ cursor: "pointer", backgroundColor: "#ffd600" }}
               >
                 Order
+              </p>
+              <p
+                className={styles.compare}
+                onClick={() => onAddCar(Number(id))}
+              >
+                {isAdded ? "Delete" : "Compare"}
               </p>
             </div>
           </div>

@@ -20,7 +20,7 @@ export const getBuyRequests = async () => {
   const requests = await request({
     url: "/buyrequest",
     method: "GET",
-  })
-  
+  });
+
   return requests;
-}
+};

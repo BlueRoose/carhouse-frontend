@@ -5,6 +5,7 @@ import About from "../../pages/About/About";
 import CarPage from "../../pages/CarPage/CarPage";
 import CheckUser from "../../pages/CheckUser/CheckUser";
 import Collections from "../../pages/Collections/Collections";
+import Compare from "../../pages/Compare/Compare";
 import Contact from "../../pages/Contact/Contact";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
@@ -20,6 +21,7 @@ const Router: FC = () => {
         <Route path="/collections" element={<Collections />} />
         <Route path="/collections/car/:id" element={<CarPage />} />
         <Route path="/admin" element={<CheckUser />} />
+        <Route path="/compare" element={<Compare />} />
       </Routes>
     </BrowserRouter>
   );

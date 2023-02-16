@@ -17,7 +17,7 @@ export type Cars = {
 
 export type Props = {
   children: JSX.Element;
-}
+};
 
 export interface CarsContextType {
   count: number;

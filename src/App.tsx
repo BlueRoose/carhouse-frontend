@@ -2,6 +2,7 @@ import { FC } from "react";
 import Router from "./components/Router/Router";
 import { BrandsProvider } from "./providers/brands/BrandsProvider";
 import { CarsProvider } from "./providers/cars/CarsProvider";
+import { CompareProvider } from "./providers/compare/CompareProvider";
 import { TypesProvider } from "./providers/types/TypesProvider";
 
 const App: FC = () => {
@@ -10,7 +11,9 @@ const App: FC = () => {
       <BrandsProvider>
         <CarsProvider>
           <TypesProvider>
-            <Router />
+            <CompareProvider>
+              <Router />
+            </CompareProvider>
           </TypesProvider>
         </CarsProvider>
       </BrandsProvider>

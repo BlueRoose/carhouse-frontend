@@ -3,4 +3,4 @@ declare module "*.scss" {
   export default content;
 }
 
-declare module 'scroll-lock';
+declare module "scroll-lock";

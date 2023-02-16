@@ -43,53 +43,53 @@ const AddCar: FC = () => {
 
   const handleChangeForm = (name: string, value: string) => {
     switch (name) {
-        case "name":
-            setForm({...form, "name": value});
-            break;
-        case "year":
-            setForm({...form, "year": Number(value)});
-            break;
-        case "price":
-            setForm({...form, "price": Number(value)});
-            break;
-        case "color":
-            setForm({...form, "color": value});
-            break;
-        case "transmission":
-            setForm({...form, "transmition": value});
-            break;
-        case "passenger":
-            setForm({...form, "passenger": Number(value)});
-            break;
-        case "top speed":
-            setForm({...form, "topSpeed": Number(value)});
-            break;
-        case "horse power":
-            setForm({...form, "horsePower": Number(value)});
-            break;
-        case "time":
-            setForm({...form, "time": Number(value)});
-            break;
-        case "rating":
-            setForm({...form, "rating": Number(value)});
-            break;
-    };
+      case "name":
+        setForm({ ...form, name: value });
+        break;
+      case "year":
+        setForm({ ...form, year: Number(value) });
+        break;
+      case "price":
+        setForm({ ...form, price: Number(value) });
+        break;
+      case "color":
+        setForm({ ...form, color: value });
+        break;
+      case "transmission":
+        setForm({ ...form, transmition: value });
+        break;
+      case "passenger":
+        setForm({ ...form, passenger: Number(value) });
+        break;
+      case "top speed":
+        setForm({ ...form, topSpeed: Number(value) });
+        break;
+      case "horse power":
+        setForm({ ...form, horsePower: Number(value) });
+        break;
+      case "time":
+        setForm({ ...form, time: Number(value) });
+        break;
+      case "rating":
+        setForm({ ...form, rating: Number(value) });
+        break;
+    }
   };
 
   const handleChangeType = (prop: string) => {
-    const id = types?.find(type => type.name === prop)?.id;
-    setForm({...form, "typeId": Number(id)});
+    const id = types?.find((type) => type.name === prop)?.id;
+    setForm({ ...form, typeId: Number(id) });
   };
 
   const handleChangeBrand = (prop: string) => {
-    const id = brands?.find(brand => brand.name === prop)?.id;
-    setForm({...form, "brandId": Number(id)});
+    const id = brands?.find((brand) => brand.name === prop)?.id;
+    setForm({ ...form, brandId: Number(id) });
   };
 
   const handleChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.currentTarget.files != null) {
-        let a = event.currentTarget.files[0];
-        setForm({...form, "img": a});
+      let a = event.currentTarget.files[0];
+      setForm({ ...form, img: a });
     }
   };
 
@@ -169,9 +169,15 @@ const AddCar: FC = () => {
         />
         <SearchType name="Brand" things={brands} onChange={handleChangeBrand} />
         <SearchType name="Type" things={types} onChange={handleChangeType} />
-        <input onChange={event => handleChangeFile(event)} className={styles.file} type="file" />
+        <input
+          onChange={(event) => handleChangeFile(event)}
+          className={styles.file}
+          type="file"
+        />
       </div>
-      <p className={styles.click} onClick={() => createCar(form)}>Add new car</p>
+      <p className={styles.click} onClick={() => createCar(form)}>
+        Add new car
+      </p>
     </div>
   );
 };

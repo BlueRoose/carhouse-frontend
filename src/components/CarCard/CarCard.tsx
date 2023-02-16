@@ -46,8 +46,7 @@ const CarCard: FC<CarCardProps> = ({
         if (requests[i].carId === id) {
           setIsOrdered(true);
           break;
-        }
-        else {
+        } else {
           setIsOrdered(false);
         }
       }
@@ -57,7 +56,7 @@ const CarCard: FC<CarCardProps> = ({
       //     setIsOrdered(true);
       //   }
     });
-    }, [name, id]);
+  }, [name, id]);
 
   return (
     <div className={styles.carCard}>

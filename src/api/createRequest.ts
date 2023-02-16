@@ -8,7 +8,7 @@ type RequestType = {
   method: string;
   url: string;
   data?: any;
-}
+};
 
 export const request = async ({ method, url, data }: RequestType) => {
   const options = {
@@ -19,8 +19,6 @@ export const request = async ({ method, url, data }: RequestType) => {
       "Content-type": "multipart/form-data",
     },
   };
-
-
 
   try {
     const result = await axiosInstance(options);

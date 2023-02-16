@@ -1,19 +1,22 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .request {
-    width: 500px;
-    height: 450px;
-    border-radius: 15px;
-    background-color: #ffd600;
-    padding: 5px;
-    overflow: auto;
+  max-width: 500px;
+  height: 450px;
+  border-radius: 15px;
+  background-color: #ffd600;
+  padding: 5px;
+  overflow: auto;
 
-    .req {
-        border: 1px solid #000000;
-        border-radius: 15px;
-        margin-bottom: 5px;
-    }
+  .req {
+    width: 498px;
+    max-height: 100%;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+  }
 }

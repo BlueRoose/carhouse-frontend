@@ -6,8 +6,8 @@ export const sortByName = (cars: Array<Cars>, brands: Array<Brands>) => {
     a.name > b.name ? 1 : -1
   );
   const order: Array<number> = [];
-  newBrands.map(brand => order.push(brand.id));
-  return cars.sort((a,b) => order.indexOf(a.id) - order.indexOf(b.id));
+  newBrands.map((brand) => order.push(brand.id));
+  return cars.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 };
 
 export const sortByPopularity = (cars: Array<Cars>) => {

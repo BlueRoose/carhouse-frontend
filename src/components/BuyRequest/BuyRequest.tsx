@@ -9,19 +9,33 @@ interface Props {
 }
 
 const Request: FC<Props> = ({ items }) => {
-    const { fullCars } = useCars();
-    const { brands } = useBrands();
+  const { fullCars } = useCars();
+  const { brands } = useBrands();
 
   return (
     <div className={styles.request}>
       {items.map((item: BuyRequest, index) => {
-        return <div className={styles.req} key={index}>
-        <h4>{item?.name + " - " + item?.phone}</h4>
-        <p>{item?.email}</p>
-        <p>{brands.find(brand => brand?.id === Number(fullCars?.find(car => Number(car.id) === Number(item?.carId))?.brandId))?.name + " " + fullCars?.find(car => Number(car.id) === Number(item?.carId))?.name}</p>
-      </div>
+        return (
+          <div className={styles.req} key={index}>
+            <h4>{item?.name + " - " + item?.phone}</h4>
+            <p>{item?.email}</p>
+            <p>
+              {brands.find(
+                (brand) =>
+                  brand?.id ===
+                  Number(
+                    fullCars?.find(
+                      (car) => Number(car.id) === Number(item?.carId)
+                    )?.brandId
+                  )
+              )?.name +
+                " " +
+                fullCars?.find((car) => Number(car.id) === Number(item?.carId))
+                  ?.name}
+            </p>
+          </div>
+        );
       })}
-      
     </div>
   );
 };
