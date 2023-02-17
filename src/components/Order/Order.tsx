@@ -79,7 +79,7 @@ const Order: FC<Props> = ({ brand, name, id, closeWindow, sendRequest }) => {
           <Input
             type="text"
             label="Phone"
-            pattern="[0-9]{5,10}"
+            pattern="[0-9]{5,15}"
             inputWidth={440}
             inputHeight={30}
             onChange={handleChangeForm}

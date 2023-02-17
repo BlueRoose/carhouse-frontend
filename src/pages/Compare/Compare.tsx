@@ -22,7 +22,9 @@ const Compare: FC = () => {
     });
   });
 
-  console.log(autos);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
