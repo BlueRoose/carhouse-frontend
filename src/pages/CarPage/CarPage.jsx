@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import {
   getFavourites,
@@ -45,20 +45,20 @@ const CarPage = () => {
 
   const handleFavourited = async () => {
     if (isFavourited) {
-      await removeFromFavourites(user.id, myCar.id);
+      await removeFromFavourites(user?.id, myCar.id);
     } else {
-      await addToFavourites(user.id, myCar.id);
+      await addToFavourites(user?.id, myCar.id);
     }
   };
 
   useEffect(() => {
     async function fetchData() {
-      const { favouritedCars } = await getFavourites(user.id);
+      const { favouritedCars } = await getFavourites(user?.id);
       setIsFavourited(favouritedCars.some((car) => car.id === myCar?.id));
     }
     fetchData();
     window.scrollTo(0, 0);
-  }, [myCar?.id, user.id]);
+  }, [myCar?.id, user?.id]);
 
   return (
     <div id="carpage" className={styles.carpage}>
@@ -91,16 +91,22 @@ const CarPage = () => {
               <p style={{ backgroundColor: "#272727", color: "#ffffff" }}>
                 {myCar?.price} $
               </p>
-              {!myCar?.buyRequestId && <p
+              {!myCar?.buyRequestId && user?.id && <p
                 className={styles.hover}
                 onClick={() => order()}
                 style={{ cursor: "pointer", backgroundColor: "#ffd600" }}
               >
                 Order
               </p>}
-              <p className={styles.compare} onClick={() => handleFavourited()}>
+              {!user?.id && <Link to="/authorization" style={{ textDecoration: "none", color: "black" }}><p
+                className={styles.hover}
+                style={{ cursor: "pointer", backgroundColor: "#ffd600" }}
+              >
+                Log in to buy
+              </p></Link>}
+              {user?.id && <p className={styles.compare} onClick={() => handleFavourited()}>
                 {isFavourited ? "Remove from favourites" : "Add to favourites"}
-              </p>
+              </p>}
             </div>
           </div>
         </div>

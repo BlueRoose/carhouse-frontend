@@ -64,21 +64,11 @@ const Header = () => {
           </li>
         </Link>
         }
-        { !token &&         <Link to="/authorization" style={{ textDecoration: "none" }}>
-          <li
-            style={
-              pathname === "/authorization"
-                ? { color: "#ffffff" }
-                : { color: "#979797" }
-            }
-          >
-            Authorization
-          </li>
-        </Link>}
       </ul>
-      <Link to="/contact" style={{ textDecoration: "none" }}>
-        <p className={styles.contact}>Contact us</p>
-      </Link>
+      {token && <p className={styles.contact} onClick={() => localStorage.clear()}>Log out</p>}
+      {!token && <Link to="/authorization" style={{ textDecoration: "none" }}>
+        <p className={styles.contact}>{token ? "Log out" : "Login"}</p>
+      </Link>}
     </header>
   );
 };
