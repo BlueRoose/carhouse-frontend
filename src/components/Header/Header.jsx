@@ -4,6 +4,7 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const { pathname } = useLocation();
+  const token = localStorage.getItem("token");
   return (
     <header className={styles.header}>
       <Logo />
@@ -50,7 +51,8 @@ const Header = () => {
             Collections
           </li>
         </Link>
-        <Link to="/favourites" style={{ textDecoration: "none" }}>
+        {
+          token &&         <Link to="/favourites" style={{ textDecoration: "none" }}>
           <li
             style={
               pathname === "/favourites"
@@ -61,6 +63,18 @@ const Header = () => {
             Favourites
           </li>
         </Link>
+        }
+        { !token &&         <Link to="/authorization" style={{ textDecoration: "none" }}>
+          <li
+            style={
+              pathname === "/authorization"
+                ? { color: "#ffffff" }
+                : { color: "#979797" }
+            }
+          >
+            Authorization
+          </li>
+        </Link>}
       </ul>
       <Link to="/contact" style={{ textDecoration: "none" }}>
         <p className={styles.contact}>Contact us</p>

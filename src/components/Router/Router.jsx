@@ -8,6 +8,7 @@ import Favourites from "../../pages/Favourites/Favourites";
 import Contact from "../../pages/Contact/Contact";
 import Home from "../../pages/Home/Home";
 import Services from "../../pages/Services/Services";
+import Authorization from "../../pages/Authorization/Authorization";
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/collections" element={<Collections />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/collections/car/:id" element={<CarPage />} />
+        <Route path="/authorization" element={<Authorization />} />
         <Route path="/admin" element={<CheckUser />} />
       </Routes>
     </BrowserRouter>
