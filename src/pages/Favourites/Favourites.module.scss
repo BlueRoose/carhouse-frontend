@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.collections {
+  background-color: #ffffff;
+
+  .info {
+    background-color: #272727;
+
+    .text {
+      text-align: center;
+      padding-top: 75px;
+
+      span {
+        color: #ffd600;
+        font-size: 32px;
+      }
+
+      h2 {
+        color: #ffffff;
+        font-size: 36px;
+        margin-top: 10px;
+      }
+
+      p {
+        color: #ffffff;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    }
+
+    .filter {
+      max-width: 1000px;
+      height: 70px;
+      margin: 70px auto 0 auto;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+
+      .searchs {
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+      }
+
+      .find {
+        font-size: 18px;
+        font-weight: bold;
+        width: 100px;
+        height: 50px;
+        background-color: #ffd600;
+        padding: 12px 30px 15px 25px;
+        margin-top: 10px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        transition: 0.2s linear;
+        cursor: pointer;
+      }
+
+      .find:hover {
+        border-radius: 15px;
+      }
+
+      .compare {
+        cursor: pointer;
+      }
+    }
+
+    .main {
+      min-height: 400px;
+      background-color: #ffffff;
+      padding-top: 100px;
+
+      .spinner {
+        padding-top: 100px;
+        text-align: center;
+      }
+
+      .sort {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 200px;
+        padding-right: 200px;
+        margin-bottom: 70px;
+      }
+
+      .cards {
+        max-width: 90vw;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .root {
+        max-width: 100%;
+        list-style-type: none;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 100px 0;
+
+        li {
+          display: inline-block;
+        }
+
+        a {
+          display: block;
+          text-align: center;
+          line-height: 30px;
+          width: 30px;
+          height: 30px;
+          padding: 5px;
+          font-size: 18px;
+          font-weight: bold;
+          background-color: #ffd600;
+          border-radius: 15px;
+          margin-right: 10px;
+          cursor: pointer;
+          color: #000000;
+
+          &:hover {
+            border: 2px solid #000000;
+          }
+        }
+
+        :global {
+          .selected {
+            a {
+              border: 2px solid #000000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
 
 .add {
   width: 500px;
-  height: 500px;
+  height: 600px;
   border-radius: 15px;
   background-color: #ffd600;
   padding: 10px 5px 5px 5px;
@@ -25,8 +25,12 @@
     }
   }
 
+  select {
+    margin: 20px 0;
+  }
+
   .click {
-    width: 500px;
+    width: fit-content;
     height: 30px;
     margin: 0 auto;
     padding: 2px 10px 0 10px;
